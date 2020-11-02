@@ -1,0 +1,6 @@
+check50:
+  checks:
+    hello world:
+      - run: pyhton3 hello.py
+        stdout: Hello World
+        exit: 0
