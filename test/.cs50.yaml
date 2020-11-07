@@ -1,6 +1,6 @@
 check50:
   checks:
     hello world:
-      - run: ./hello.exe
+      - run: ./hello
         stdout: Hello World
         exit: 0
