@@ -1,15 +1,14 @@
 import check50
-import check50.c
 
 @check50.check()
 def exists():
     """readability.c exists"""
-    check50.exists("readability.c")
+    check50.exists("readability.cpp")
 
 @check50.check(exists)
 def compiles():
     """readability.c compiles"""
-    check50.c.compile("readability.c", lcs50=True)
+    check50.run("g++ readability.cpp -lcrypt -lcs50 -lm -o readability").exit(0)
 
 @check50.check(compiles)
 def single_sentence():
