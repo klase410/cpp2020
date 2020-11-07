@@ -1,6 +1,7 @@
 check50:
   checks:
     hello world:
-      - run: python3 hello.py
+      - run: g++ hello.cpp -o hello.exe
+      - run: hello.exe
         stdout: Hello World
         exit: 0
