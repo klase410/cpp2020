@@ -1,15 +1,14 @@
 import check50
-import check50.c
 
 @check50.check()
 def exists():
-    """substitution.c exists"""
-    check50.exists("substitution.c")
+    """substitution.cpp exists"""
+    check50.exists("substitution.cpp")
 
 @check50.check(exists)
 def compiles():
-    """substitution.c compiles"""
-    check50.c.compile("substitution.c", lcs50=True)
+    """substitution.cpp compiles"""
+    check50.run("g++ substitution.cpp -lcrypt -lcs50 -lm -o substitution").exit(0)
 
 @check50.check(compiles)
 def encrypt1():
