@@ -1,16 +1,15 @@
 import check50
-import check50.c
 
 @check50.check()
 def exists():
     """mario.c exists"""
-    check50.exists("mario.c")
+    check50.exists("mario.cpp")
     check50.include("1.txt", "2.txt", "8.txt")
 
 @check50.check(exists)
 def compiles():
-    """mario.c compiles"""
-    check50.c.compile("mario.c", lcs50=True)
+    """mario.cpp compiles"""
+    check50.run("g++ mario.cpp -lcrypt -lcs50 -lm -o mario").exit(0)
 
 @check50.check(compiles)
 def test_reject_negative():
