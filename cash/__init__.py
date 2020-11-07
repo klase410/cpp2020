@@ -1,17 +1,16 @@
 import check50
-import check50.c
 
 
 @check50.check()
 def exists():
     """cash.c exists"""
-    check50.exists("cash.c")
+    check50.exists("cash.cpp")
 
 
 @check50.check(exists)
 def compiles():
-    """cash.c compiles"""
-    check50.c.compile("cash.c", lcs50=True)
+    """cash.cpp compiles"""
+    check50.run("g++ cash.cpp -lcrypt -lcs50 -lm -o cash").exit(0)
 
 
 @check50.check(compiles)
