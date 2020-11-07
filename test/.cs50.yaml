@@ -1,7 +1,6 @@
 check50:
   checks:
     hello world:
-      - run: g++ hello.cpp -o hello.exe
       - run: hello.exe
         stdout: Hello World
         exit: 0
