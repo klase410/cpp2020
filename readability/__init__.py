@@ -2,12 +2,12 @@ import check50
 
 @check50.check()
 def exists():
-    """readability.c exists"""
+    """readability.cpp exists"""
     check50.exists("readability.cpp")
 
 @check50.check(exists)
 def compiles():
-    """readability.c compiles"""
+    """readability.cpp compiles"""
     check50.run("g++ readability.cpp -lcrypt -lcs50 -lm -o readability").exit(0)
 
 @check50.check(compiles)
