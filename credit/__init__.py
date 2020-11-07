@@ -3,13 +3,13 @@ import check50.c
 
 @check50.check()
 def exists():
-    """credit.c exists"""
-    check50.exists("credit.c")
+    """credit.cpp exists"""
+    check50.exists("credit.cpp")
 
 @check50.check(exists)
 def compiles():
-    """credit.c compiles"""
-    check50.c.compile("credit.c", lcs50=True)
+    """credit.cpp compiles"""
+    check50.run("g++ credit.cpp -lcrypt -lcs50 -lm -o credit").exit(0)
 
 @check50.check(compiles)
 def test1():
