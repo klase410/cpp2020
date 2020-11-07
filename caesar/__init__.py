@@ -1,15 +1,14 @@
 import check50
-import check50.c
 
 @check50.check()
 def exists():
-    """caesar.c exists."""
-    check50.exists("caesar.c")
+    """caesar.cpp exists."""
+    check50.exists("caesar.cpp")
 
 @check50.check(exists)
 def compiles():
-    """caesar.c compiles."""
-    check50.c.compile("caesar.c", lcs50=True)
+    """caesar.cpp compiles."""
+    check50.run("g++ caesar.cpp -lcrypt -lcs50 -lm -o caesar").exit(0)
 
 @check50.check(compiles)
 def encrypts_a_as_b():
