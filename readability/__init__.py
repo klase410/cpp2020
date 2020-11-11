@@ -21,7 +21,7 @@ def single_sentence_fileRead():
             raise check50.Failure("Expected result: Grade 7\n, not" + str(rez))
             
 @check50.check(compiles)
-def single_sentence_fileRead():
+def single_sentence_other_punctuation_fileRead():
     """handles punctuation within a single sentence"""
     check50.run("./readability").stdin("input2.txt").exit(0)
     with open('output.txt') as out
