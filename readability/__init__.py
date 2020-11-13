@@ -16,16 +16,14 @@ def compiles():
 def single_sentence_fileRead():
     """handles single sentence with multiple words"""
     check50.run("./readability").stdin("input1.txt").exit(0)
-    raise check50.Failure(open("output.txt").read())
-    check_output(open("output.txt"), open("expected_output1.txt"))
+    check_output(open("output.txt").read(), open("expected_output1.txt").read())
     
 @check50.check(compiles)
 def single_sentence_other_punctuation_fileRead():
     """handles punctuation within a single sentence"""
     check50.run("./readability").stdin("input2.txt").exit(0)
-    raise check50.Failure(open("output.txt").read())
-    check_output(open("output.txt"), open("expected_output2.txt"))
+    check_output(open("output.txt").read(), open("expected_output2.txt").read())
             
 def check_output(out, expected_out):
-    if (out.read() != expected_out.read()):
-        raise check50.Failure("Calculated result result does not match with expected result" + out.read() + "Hello")
+    if (out != expected_out):
+        raise check50.Failure("Calculated result result does not match with expected result" + out + "Hello")
