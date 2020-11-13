@@ -1,6 +1,6 @@
 import check50
 
-@check50.check(output_file_exists)
+@check50.check()
 def exists():
     """readability.cpp exists"""
     check50.exists("readability.cpp")
@@ -16,7 +16,7 @@ def compiles():
 def single_sentence_fileRead():
     """handles single sentence with multiple words"""
     check50.run("./readability").stdin("input1.txt").exit(0)
-    #check50.run("cat input1.txt").exit(0)
+    check50.run("cat input1.txt").exit(0)
     check_output(open("output.txt"), open("expected_output1.txt"))
     
 @check50.check(compiles)
