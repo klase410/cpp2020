@@ -10,9 +10,8 @@ def exists():
 @check50.check(exists)
 def input_test():
 	"""Contents of input.txt are valid"""
-    with open('input.txt').read() as f:
-        if not (f = "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.")
-            raise check50.Failure("Contents of input.txt file are not valid\nExpected input: In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.")
+    if not (open("input.txt").read() = "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.")
+        raise check50.Failure("Contents of input.txt file are not valid\nExpected input: In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.")
 
 @check50.check(exists)
 def compiles():
