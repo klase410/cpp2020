@@ -16,7 +16,7 @@ def compiles():
 def single_sentence_fileRead():
     """handles single sentence with multiple words"""
     check50.run("./readability").stdin("input1.txt").exit(0)
-    raise check50.Failure(open("input1.txt").read())
+    check50.run("whereis output.txt")
     check_output(open("output.txt"), open("expected_output1.txt"))
     
 @check50.check(compiles)
