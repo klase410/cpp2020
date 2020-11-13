@@ -28,4 +28,5 @@ def single_sentence_other_punctuation_fileRead():
             
 def check_output(out, expected_out):
     if (out.read() != expected_out.read()):
+        print(out.read())
         raise check50.Failure("Calculated result result does not match with expected result")
