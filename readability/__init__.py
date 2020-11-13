@@ -5,7 +5,7 @@ def exists():
     """readability.cpp exists"""
     check50.exists("readability.cpp")
     check50.include("input1.txt", "input2.txt")
-    check50.include("expected_output1.txt, expected_output2.txt")
+    check50.include("expected_output1.txt", "expected_output2.txt")
 
 @check50.check(exists)
 def compiles():
