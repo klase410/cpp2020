@@ -22,7 +22,7 @@ def single_sentence_fileRead():
 @check50.check(compiles)
 def single_sentence_other_punctuation_fileRead():
     """handles punctuation within a single sentence"""
-    check50.run("./readability > output.txt").stdin("input2.txt").exit(0)
+    check50.run("./readability").stdin("input2.txt").exit(0)
     check_output(open("output.txt"), open("expected_output2.txt"))
             
 def check_output(out, expected_out):
