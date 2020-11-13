@@ -4,6 +4,7 @@ import check50
 def exists():
     """readability.cpp exists"""
     check50.exists("readability.cpp")
+    check50.include("output.txt")
     check50.include("input1.txt", "input2.txt")
     check50.include("expected_output1.txt", "expected_output2.txt")
 
@@ -15,16 +16,13 @@ def compiles():
 @check50.check(compiles)
 def single_sentence_fileRead():
     """handles single sentence with multiple words"""
-    check50.include("output.txt")
     check50.run("./readability").stdin("input1.txt").exit(0)
-    check50.include("output.txt")
     check_output(open("output.txt"), open("expected_output1.txt"))
     
 @check50.check(compiles)
 def single_sentence_other_punctuation_fileRead():
     """handles punctuation within a single sentence"""
     check50.run("./readability").stdin("input2.txt").exit(0)
-    check50.include("output.txt")
     check_output(open("output.txt"), open("expected_output2.txt"))
             
 def check_output(out, expected_out):
