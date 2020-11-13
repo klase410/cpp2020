@@ -23,6 +23,7 @@ def single_sentence_fileRead():
 def single_sentence_other_punctuation_fileRead():
     """handles punctuation within a single sentence"""
     check50.run("./readability").stdin("input2.txt").exit(0)
+    raise check50.Failure(open("output.txt").read())
     check_output(open("output.txt"), open("expected_output2.txt"))
             
 def check_output(out, expected_out):
