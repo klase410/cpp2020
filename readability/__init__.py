@@ -4,7 +4,7 @@ import check50
 def exists():
     """readability.cpp exists"""
     check50.exists("readability.cpp")
-    check50.include("output.txt")
+    check50.exists("output.txt")
     check50.include("input1.txt", "input2.txt")
     check50.include("expected_output1.txt", "expected_output2.txt")
 
