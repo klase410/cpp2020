@@ -4,6 +4,7 @@ import check50
 def output_file_exists():
     """output.txt exists"""
     check50.exists("output.txt")
+    check50.include("expected_output1.txt", "expected_output1.txt")
 
 @check50.check(output_file_exists)
 def exists():
