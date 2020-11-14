@@ -4,8 +4,8 @@ import check50
 def exists():
     """substitution.cpp exists"""
     check50.exists("substitution.cpp")
-    check50.include("input1.txt", "input2.txt")
-    check50.include("expected_output1.txt", "expected_output2.txt")
+    check50.include("input1.txt", "input2.txt", "input3.txt", "input4.txt", "input5.txt", "input6.txt", "input7.txt", "input8.txt")
+    check50.include("expected_output1.txt", "expected_output2.txt", "expected_output3.txt", "expected_output4.txt", "expected_output5.txt", "expected_output6.txt", "expected_output7.txt", "expected_output8.txt")
 
 @check50.check(exists)
 def compiles():
