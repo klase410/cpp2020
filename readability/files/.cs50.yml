@@ -2,7 +2,7 @@ check50:
   files: &check50_files
     - !exclude "*"
     - !require readability.cpp
-    - !require input.txt
+    - !require "input.txt"
     - !include "*.txt"
 
 submit50:
