@@ -4,16 +4,20 @@ import check50
 def exists():
     """readability.cpp exists"""
     check50.exists("readability.cpp")
-    check50.include("input.txt")
     check50.include("expected_output.txt")
 
 @check50.check(exists)
+def input_exists():
+    """readability.cpp exists"""
+    check50.exists("readability.cpp")
+
+@check50.check(input_exists)
 def input_test():
 	"""Contents of input.txt are valid"""
     if not (open("input.txt").read() == "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.")
         raise check50.Failure("Contents of input.txt file are not valid\nExpected input: In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.")
 
-@check50.check(exists)
+@check50.check(input_test)
 def compiles():
     """readability.cpp compiles"""
     check50.run("g++ readability.cpp -lcrypt -lcs50 -lm -o readability").exit(0)
