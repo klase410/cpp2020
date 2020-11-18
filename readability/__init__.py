@@ -10,8 +10,8 @@ def exists():
 @check50.check(exists)
 def compiles():
     """readability.cpp compiles"""
-    check50.run("g++ readability.cpp -lcrypt -lcs50 -lm -o readability").exit(0)
-
+    check50.run("g++ readability.cpp -lcrypt -lm -o readability").exit(0)
+#add -lc50 flag to compile command, to ask for github credentials
 @check50.check(compiles)
 def single_sentence_fileRead():
     """handles single sentence with multiple words"""

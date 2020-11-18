@@ -11,7 +11,7 @@ def exists():
 def compiles():
     """caesar.cpp compiles."""
     check50.run("g++ caesar.cpp -lcrypt -lm -o caesar").exit(0)
-
+#add -lc50 flag to compile command, to ask for github credentials
 @check50.check(compiles)
 def encrypts_a_as_b():
     """encrypts "a" as "b" using 1 as key"""

@@ -10,8 +10,8 @@ def exists():
 @check50.check(exists)
 def compiles():
     """substitution.cpp compiles"""
-    check50.run("g++ substitution.cpp -lcrypt -lcs50 -lm -o substitution").exit(0)
-
+    check50.run("g++ substitution.cpp -lcrypt -lm -o substitution").exit(0)
+#add -lc50 flag to compile command, to ask for github credentials
 @check50.check(compiles)
 def encrypt1():
     """encrypts "A" as "Z" using ZYXWVUTSRQPONMLKJIHGFEDCBA as key"""
