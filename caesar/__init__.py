@@ -10,7 +10,7 @@ def exists():
 @check50.check(exists)
 def compiles():
     """caesar.cpp compiles."""
-    check50.run("g++ caesar.cpp -lcrypt -lcs50 -lm -o caesar").exit(0)
+    check50.run("g++ caesar.cpp -lcrypt -lm -o caesar").exit(0)
 
 @check50.check(compiles)
 def encrypts_a_as_b():
