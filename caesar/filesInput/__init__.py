@@ -52,7 +52,12 @@ def checks_for_handling_non_alpha():
 def handles_no_argv():
     """handles lack of argv[1]"""
     check50.run("./caesar").exit(1)
-    
+
+
+def check_output(out, expected_out):
+    if (out != expected_out):
+        raise check50.Failure("Calculated result does not match with expected result\nOutput: " + out + "\nExpected output: " + expected_out)
+
     
 def generate_input(input):
     open("input.txt", "w").write(input)
